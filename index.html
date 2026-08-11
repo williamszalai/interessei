@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processos SEI - Auxílios</title>
+    <style>
+        /* Reseta as margens e define a fonte da página */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Cria um 'cartão' branco centralizado */
+        .card {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px; /* Aumentei um pouco para os novos botões */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Contêiner para empilhar os botões */
+        .botoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaço entre os botões */
+        }
+
+        /* Estilo base compartilhado pelos botões */
+        .btn-processo {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* 1. Botão de Alimentação (Laranja) */
+        .btn-alimentacao {
+            background-color: #d35400; 
+            box-shadow: 0 4px 6px rgba(211, 84, 0, 0.3);
+        }
+        .btn-alimentacao:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(211, 84, 0, 0.4);
+        }
+        .btn-alimentacao:active { transform: translateY(0); }
+
+        /* 2. Botão de Educação (Azul) */
+        .btn-educacao {
+            background-color: #2980b9; 
+            box-shadow: 0 4px 6px rgba(41, 128, 185, 0.3);
+        }
+        .btn-educacao:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4);
+        }
+        .btn-educacao:active { transform: translateY(0); }
+
+        /* 3. Botão de Saúde (Vermelho) */
+        .btn-saude {
+            background-color: #e74c3c; 
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+        }
+        .btn-saude:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+        }
+        .btn-saude:active { transform: translateY(0); }
+
+        /* 4. Botão Green Card (Verde) */
+        .btn-greencard {
+            background-color: #27ae60; 
+            box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+        }
+        .btn-greencard:hover {
+            background-color: #2ecc71;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+        .btn-greencard:active { transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <h1>Meus Processos SEI</h1>
+        
+        <div class="botoes-container">
+            <!-- Alimentação -->
+            <a class="btn-processo btn-alimentacao" href="https://sei.rj.gov.br/sei/modulos/pesquisa/md_pesq_processo_exibir.php?IC2o8Z7ACQH4LdQ4jJLJzjPBiLtP6l2FsQacllhUf-duzEubalut9yvd8-CzYYNLu7pd-wiM0k633-D6khhQNU8i0ecJkKgW7-RIB81Th8kWWv7piM22_Cgdlf1OZ1-Z" target="_blank">
+                🥟 Auxílio Alimentação
+            </a>
+
+            <!-- Educação -->
+            <a class="btn-processo btn-educacao" href="https://sei.rj.gov.br/sei/modulos/pesquisa/md_pesq_processo_exibir.php?IC2o8Z7ACQH4LdQ4jJLJzjPBiLtP6l2FsQacllhUf-duzEubalut9yvd8-CzYYNLu7pd-wiM0k633-D6khhQNWgMc3UN1W5orQ-cP3i0Xry_NDPZwUqwhfoP4cp52RH1" target="_blank">
+                📚 Auxílio Educação
+            </a>
+
+            <!-- Saúde -->
+            <a class="btn-processo btn-saude" href="https://sei.rj.gov.br/sei/modulos/pesquisa/md_pesq_processo_exibir.php?IC2o8Z7ACQH4LdQ4jJLJzjPBiLtP6l2FsQacllhUf-duzEubalut9yvd8-CzYYNLu7pd-wiM0k633-D6khhQNcBN57oqmcdGhIjqzXqjN8IE0CddU3DpOxMz_kBi1dVw" target="_blank">
+                🏥 Auxílio Saúde
+            </a>
+
+            <!-- Green Card -->
+            <a class="btn-processo btn-greencard" href="https://sei.rj.gov.br/sei/modulos/pesquisa/md_pesq_processo_exibir.php?IC2o8Z7ACQH4LdQ4jJLJzjPBiLtP6l2FsQacllhUf-duzEubalut9yvd8-CzYYNLu7pd-wiM0k633-D6khhQNUw2q4jVmdPr3JzlxDC6xTxcHOUiR0klGl6NwNN-HABs" target="_blank">
+                💳 Green Card
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+
