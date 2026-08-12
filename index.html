@@ -24,7 +24,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 400px; /* Aumentei um pouco para os novos botões */
+            max-width: 450px; /* Levemente ajustado para o formulário */
             width: 100%;
             box-sizing: border-box;
         }
@@ -53,6 +53,9 @@
             font-weight: bold;
             border-radius: 8px;
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
         }
 
         /* 1. Botão de Alimentação (Laranja) */
@@ -103,6 +106,57 @@
         }
         .btn-greencard:active { transform: translateY(0); }
 
+        /* Estilos do Formulário Novo */
+        .divisor {
+            border: 0;
+            height: 1px;
+            background: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .form-solicitacao {
+            text-align: left;
+        }
+
+        .form-solicitacao p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .form-solicitacao input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-solicitacao input:focus {
+            outline: none;
+            border-color: #25D366;
+        }
+
+        /* Botão do WhatsApp (Verde Específico) */
+        .btn-whatsapp {
+            background-color: #25D366; 
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.3);
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+        .btn-whatsapp:active { transform: translateY(0); }
+
     </style>
 </head>
 <body>
@@ -131,8 +185,46 @@
                 💳 Green Card
             </a>
         </div>
+
+        <hr class="divisor">
+
+        <!-- Novo Formulário de Solicitação -->
+        <div class="form-solicitacao">
+            <p><strong>Gostaria de ter um processo de interesse aqui com link rápido?</strong> Informe o número do processo SEI e o assunto e vamos analisar seu pedido.</p>
+            
+            <input type="text" id="numeroSei" placeholder="Número do Processo SEI" required>
+            <input type="text" id="assuntoSei" placeholder="Assunto (Ex: Férias, Licença)" required>
+            
+            <button id="btnEnviarWhatsapp" class="btn-processo btn-whatsapp">
+                💬 Solicitar via WhatsApp
+            </button>
+        </div>
     </div>
 
+    <!-- Script para enviar dados ao WhatsApp -->
+    <script>
+        document.getElementById('btnEnviarWhatsapp').addEventListener('click', function() {
+            // Captura os valores digitados
+            const numeroSei = document.getElementById('numeroSei').value.trim();
+            const assuntoSei = document.getElementById('assuntoSei').value.trim();
+
+            // Validação simples
+            if (numeroSei === '' || assuntoSei === '') {
+                alert('Por favor, preencha o número do processo e o assunto antes de enviar.');
+                return;
+            }
+
+            // Monta a mensagem que será enviada
+            const telefone = "5521990097858";
+            const mensagem = `Olá! Gostaria de solicitar a inclusão de um processo de interesse no sistema.\n\n*Número do Processo SEI:* ${numeroSei}\n*Assunto:* ${assuntoSei}`;
+            
+            // Codifica a mensagem para o formato de URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            
+            // Cria o link do WhatsApp e abre em uma nova aba
+            const urlWhatsapp = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagemCodificada}`;
+            window.open(urlWhatsapp, '_blank');
+        });
+    </script>
 </body>
 </html>
-
